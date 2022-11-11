@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container} from './styles'
 import Filters from '../Filters'
-import logoClinica from '../../assets/logo.png'
 
 const Header = () => {
     return (
