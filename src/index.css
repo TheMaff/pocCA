@@ -1,0 +1,17 @@
+@import "./assets/fonts/index.css";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'BentonSans';
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'BentonSans';
+}
