@@ -45,7 +45,6 @@ module.exports = {
         include: /src/,
         sideEffects: false,
       },
-<<<<<<< HEAD
       {
         test: /\.css$/,
         use: [
@@ -72,8 +71,6 @@ module.exports = {
         test: /\.(woff|woff2|ttf|otf|eot)$/,
         type: 'asset/inline'
       }
-=======
->>>>>>> 7ef84714d31b3c367c6bcecb4168456d2848c8a8
     ],
   },
   resolve: {
