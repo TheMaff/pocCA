@@ -23,7 +23,7 @@ export const Container = styled.div`
 
   .logo,.lastULpdate {
     width:25%;
-    padding .5rem 1rem;
+    padding .5rem .1rem;
     color:white;
     font-family: 'BentonSans';
     font-style: normal;
