@@ -52,14 +52,17 @@ export interface dataQuery {
   ventmecinv: 'estado_camas_live.ventmecinv'
   ventmecnoinv: 'estado_camas_live.ventmecnoinv'
   vsrnu_episodio_id: 'estado_camas_live.vsrnu_episodio_id' //
-  fecha_actualizacion: 'estado_camas_live.fecha_actualizacion'
-  fecha_autorizacion: 'estado_camas_live.fecha_autorizacion'
-  fecha_egreso_estimada_pabellon: 'estado_camas_live.fecha_egreso_estimada_pabellon'
-  fecha_solicitud: 'estado_camas_live.fecha_solicitud'
-  fechaaltaadmpaciente: 'estado_camas_live.fechaaltaadmpaciente'
-  fechaaltamedicapaciente: 'estado_camas_live.fechaaltamedicapaciente'
-  fechaaltaprobablepaciente: 'estado_camas_live.fechaaltaprobablepaciente'
-  last_fecha_encuentro: 'estado_camas_live.last_fecha_encuentro'
-  tiempoultimoestado2: 'estado_camas_live.tiempoultimoestado2'
-  vsrda_fecha_ingreso_adm: 'estado_camas_live.vsrda_fecha_ingreso_adm'
+  
+  fecha_actualizacion_date: 'estado_camas_live.fecha_actualizacion_date'
+  fecha_autorizacion_date: 'estado_camas_live.fecha_autorizacion_date'
+  fecha_egreso_estimada_pabellon_date: 'estado_camas_live.fecha_egreso_estimada_pabellon_date'
+  fecha_solicitud_date: 'estado_camas_live.fecha_solicitud_date'
+  fechaaltaadmpaciente: 'estado_camas_live.fechaaltaadmpaciente_date'
+  
+  fechaaltamedicapaciente_date: 'estado_camas_live.fechaaltamedicapaciente_date'
+
+  fechaaltaprobablepaciente_date: 'estado_camas_live.fechaaltaprobablepaciente_date'
+  last_fecha_encuentro_date: 'estado_camas_live.last_fecha_encuentro_date'
+  tiempoultimoestado2_date: 'estado_camas_live.tiempoultimoestado2_date'
+  vsrda_fecha_ingreso_adm_date: 'estado_camas_live.vsrda_fecha_ingreso_adm_date'
 }

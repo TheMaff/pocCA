@@ -24,19 +24,12 @@ const Levels = () => {
         // Si en el piso ya se creó la sección de ejey
         if (ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']]) {
           // Si ya existe un objeto en la sección ejex pusheo los nuevos
-          if (
-            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][
-              cv['estado_camas_live.ejex']
-            ]
-          ) {
-            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']].push(
-              cv
-            )
+          if (ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][cv['estado_camas_live.ejex']]) {
+            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']].push(cv)
+
           } else {
             // si no existe ningún objeto, se agrega el primero
-            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][
-              cv['estado_camas_live.ejex']
-            ] = cv
+            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][cv['estado_camas_live.ejex']] = cv
           }
         }
       }
@@ -51,8 +44,7 @@ const Levels = () => {
   for (const pisos in func(dataTest)) {
     data.push(func(dataTest)[pisos])
   }
-  console.log('Data: ')
-  console.log(data)
+
   return (
     <Container>
       <Level>
@@ -83,23 +75,94 @@ const Levels = () => {
                   
                   <div
                     key={index}
-                    className={
-                      `${
-                        room['estado_camas_live.estadocama'] === 'Ocupada'
-                        ? 'ocupada'
-                        : room['estado_camas_live.estadocama'] === 'Libre reservada'
-                        ? 'libreReservada'
-                        : room['estado_camas_live.estadocama'] === 'Libre'
-                        ? 'libre'
-                        : room['estado_camas_live.estadocama'] === 'Libre asignada'
-                        ? 'libreAsignada'
-                        : room['estado_camas_live.estadocama'] === 'En Preparacion'
-                        ? 'enPreparacion'
-                        : 'bloqueada'
-                      }
-                      tooltip-container
-                    `}
-                  >
+                    className=
+                    {`ejex_${room['estado_camas_live.ejex']} ejey_${room['estado_camas_live.ejey']} room_${
+                        room['estado_camas_live.valor_resultados'] === 'DETECTADO' && room['estado_camas_live.fechaaltamedicapaciente'] !== null
+                        ? 'COVID19AltaMed'
+
+                        :room['estado_camas_live.valor_resultados'] === 'DETECTADO'
+                        ? 'COVID19Detectado'
+                        
+                        :room['estado_camas_live.cohorte'] === 1 
+                        ? 'cohorteCOVID'
+
+                        :room['estado_camas_live.valor_resultados'] === 'No detectado' && room['estado_camas_live.fechaaltamedicapaciente_date'] !== null
+                        ? 'noCOVID19AltaMed'
+
+                        :room['estado_camas_live.valor_resultados'] === 'No detectado'
+                        ? 'COVID19NoDetectado'
+                        
+                        :room['estado_camas_live.ind_covid'] === 1 && room['estado_camas_live.valor_resultados'] === null && room['estado_camas_live.fechaaltamedicapaciente_date'] !== null
+                        ? 'sospechaCOVID19AltaMed'
+
+                        :room['estado_camas_live.ind_covid'] === 1 && room['estado_camas_live.valor_resultados'] === null
+                        ? 'sospechaCOVID19'
+
+                        : `${
+                          room['estado_camas_live.estadocama'] === 'Ocupada'
+                          ? 'ocupada'
+                          : room['estado_camas_live.estadocama'] === 'Libre reservada'
+                          ? 'libreReservada'
+                          : room['estado_camas_live.estadocama'] === 'Libre'
+                          ? 'libre'
+                          : room['estado_camas_live.estadocama'] === 'Libre asignada'
+                          ? 'libreAsignada'
+                          : room['estado_camas_live.estadocama'] === 'En Preparacion'
+                          ? 'enPreparacion'
+                          : 'bloqueada'
+                        }`
+                      } patient_${
+                        room['estado_camas_live.cohorte'] > 0
+                        ? 'ugcc'
+
+                        : room ['estado_camas_live.valor_resultados'] === 'DETECTADO' && room['estado_camas_live.fechaaltamedicapaciente_date'] !== null
+                        ? 'COVID19AltaMed'
+
+                        :room['estado_camas_live.valor_resultados'] === 'DETECTADO'    
+                        ? 'COVID19Detectado'
+                        
+                        :room['estado_camas_live.cohorte'] > 0 
+                        ? 'cohorteCOVID'
+                        
+                        :room['estado_camas_live.valor_resultados'] === 'No detectado' && room['estado_camas_live.fechaaltamedicapaciente_date'] !== null
+                        ? 'noCOVID19AltaMed'
+                            
+                        :room['estado_camas_live.vsrda_fecha_ingreso_adm_date'] === null
+                        ? 'quirurgico'
+                        
+                        :room['estado_camas_live.valor_resultados'] === 'No detectado'
+                        ? 'COVID19NoDetectado'
+
+                        :room['estado_camas_live.ind_covid'] === 1 && room['estado_camas_live.valor_resultados'] === null && room['estado_camas_live.fechaaltamedicapaciente_date'] !== null
+                        ? 'sospechaCOVID19AltaMed'
+                        
+                        :room['estado_camas_live.ind_covid'] === 1 && room['estado_camas_live.valor_resultados'] === null
+                        ? 'sospechaCOVID19'
+
+                        :room['estado_camas_live.indva_descripcion']?.includes('MQ')
+                        ? 'traslado'
+                        
+                        :room['estado_camas_live.tipo_unidad']?.includes('QUI') && room['estado_camas_live.indva_descripcion'] !== null
+                        ? 'trasladoPrioritario'
+
+                        :room['estado_camas_live.indva_descripcion']?.includes('UTI') && room['estado_camas_live.tipo_unidad']?.includes('UCI')
+                        ? 'traslado'
+                        
+                        :room['estado_camas_live.indva_descripcion']?.includes('UCI') && room['estado_camas_live.tipo_unidad']?.includes('UTI')
+                        ? 'trasladoPrioritario'
+                        
+                        :room['estado_camas_live.tipo_aseo'] === 'Terminal'
+                        ? 'aseoTerminal'
+                        
+                        :room['estado_camas_live.fechaaltampaciente_date'] === null
+                        ? 'altaAdministrativa'
+                        
+                        :room['estado_camas_live.fechaaltamedicapaciente_date'] === null
+                        ? 'altaMedica'
+                        
+                        : 'normal'
+                      } tooltip-container`}>
+
                     {room['estado_camas_live.desccama']}
 
                     <div className='tooltip'>
@@ -121,10 +184,10 @@ const Levels = () => {
                         <li>Edificio: <strong> {room['estado_camas_live.edificio2']}</strong></li>
                         <li>Pisos: <strong> {room['estado_camas_live.piso']}</strong></li>
                         <li></li>
-                        <li>Fecha Ingreso: <strong> {room['estado_camas_live.vsrda_fecha_ingreso_adm']}</strong></li>
-                        <li>Fecha Probable Egreso: <strong> {room['estado_camas_live.fecha_egreso_estimada_pabellon']}</strong></li>
+                        <li>Fecha Ingreso: <strong> {room['estado_camas_live.vsrda_fecha_ingreso_adm_date']}</strong></li>
+                        <li>Fecha Probable Egreso: <strong> {room['estado_camas_live.fecha_egreso_estimada_pabellon_date']}</strong></li>
                         <li></li>
-                        <li>Ultimo Estado: <strong> {room['estado_camas_live.last_fecha_encuentro']}</strong></li>
+                        <li>Ultimo Estado: <strong> {room['estado_camas_live.last_fecha_encuentro_date']}</strong></li>
                       </ul>
                       
                     </div>

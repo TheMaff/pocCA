@@ -8,37 +8,37 @@ const Status = () => {
             <h3>Estados</h3>
             <div>
                 <ul>
-                    <li><span className="square"></span>  COVID19 Detectado</li>
-                    <li><span className="square"></span> COVID19 No Detectado</li>
-                    <li><span className="square"></span> No COVID19 Alta Med</li>
-                    <li><span className="square"></span> COVID19 Alta Med</li>
+                    <li><span className="COVID19Detectado"></span> COVID19 Detectado</li>
+                    <li><span className="COVID19NoDetectado"></span> COVID19 No Detectado</li>
+                    <li><span className="noCOVID19AltaMed"></span> No COVID19 Alta Med</li>
+                    <li><span className="COVID19AltaMed"></span> COVID19 Alta Med</li>
                 </ul>
                 <ul>
-                    <li><span className="square"></span> Cohorte COVID</li>
-                    <li><span className="square"></span> Sospecha COVID19</li>
-                    <li><span className="square"></span> Alta Med</li>
-                    <li><span className="square"></span> Alta Administrativa</li>
+                    <li><span className="cohorteCOVID"></span> Cohorte COVID</li>
+                    <li><span className="sospechaCOVID19"></span> Sospecha COVID19</li>
+                    <li><span className="altaMed"></span> Alta Med</li>
+                    <li><span className="altaAdministrativa"></span> Alta Administrativa</li>
                 </ul>
                 <ul>
-                    <li><span className="square"></span> Quirúrgico</li>
-                    <li><span className="square"></span> UGCC</li>
-                    <li><span className="square"></span> Aseo Terminal</li>
-                    <li><span className="square"></span> Normal</li>
+                    <li><span className="quirurgico"></span> Quirúrgico</li>
+                    <li><span className="ugcc"></span> UGCC</li>
+                    <li><span className="aseoTerminal"></span> Aseo Terminal</li>
+                    <li><span className="normal"></span> Normal</li>
                 </ul>
                 <ul>
-                    <li><span className="square"></span> En preparación reservada</li>
-                    <li><span className="square"></span> Bloqueada reservada</li>
-                    <li><span className="square"></span> Ocupada reservada</li>
-                    <li><span className="square"></span> Bloqueada</li>
+                    <li><span className="enPreparacionReservada"></span> En preparación reservada</li>
+                    <li><span className="bloqueadaReservada"></span> Bloqueada reservada</li>
+                    <li><span className="ocupadaReservada"></span> Ocupada reservada</li>
+                    <li><span className="bloqueada"></span> Bloqueada</li>
                 </ul>
                 <ul>
-                    <li><span className="square"></span> En preparación</li>
-                    <li><span className="square"></span> Libre asignada</li>
-                    <li><span className="square"></span> Libre reservado</li>
-                    <li><span className="square"></span> Libre</li>
+                    <li><span className="enPreparacion"></span> En preparación</li>
+                    <li><span className="libre"></span> Libre asignada</li>
+                    <li><span className="libreAsignada "></span> Libre reservado</li>
+                    <li><span className="libreReservada"></span> Libre</li>
                 </ul>
                 <ul>
-                    <li><span className="square"></span> Traslado</li>
+                    <li><span className="traslado"></span> Traslado</li>
                 </ul>
             </div>
 

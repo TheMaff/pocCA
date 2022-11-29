@@ -4,6 +4,7 @@ export const Container = styled.div`
   flex-direction: column;
   display: flex;
   background: #1e1e1e;
+  border-radius: 12px;
 `
 export const Level = styled.div`
   height: 100%;
@@ -41,116 +42,205 @@ export const Section = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  margin: 2px 0px;
+  margin: 5px 0px;
+  min-height:36px;
   :first-child {
     margin-bottom: 15px;
   }
   div.tooltip-container {
     align-items: center;
-    font-size: 11px;
+    font-size: 10px;
     list-style: none;
     width: 26px;
     height: 26px;
     color: white;
-    margin: 5px;
+    margin: 2px;
     padding: 1rem;
     justify-content: center;
     align-content: center;
     align-items: center;
     cursor: pointer;
-    position: relative;
+    position: absolute;
+    left:50%;
+    transform:translate(-50%,0);
     display: inline-flex;
     background-repeat: no-repeat;
     background-size: cover;
+    border:solid 2px;
 
-    &.COVID19Detectado {
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMEw5Ljg4ODU0IDYuMTExNDZIMTZMMTEuMDU1NyA5Ljg4ODU0TDEyLjk0NDMgMTZMOCAxMi4yMjI5TDMuMDU1NzMgMTZMNC45NDQyNyA5Ljg4ODU0TDAgNi4xMTE0Nkg2LjExMTQ2TDggMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=')
+    &.ejex {
+      &_-1{margin-left:-2.3%}
+      &_-2{margin-left:-4.6%}
+      &_-3{margin-left:-6.9%}
+      &_-4{margin-left:-9.2%}
+      &_-5{margin-left:-11.5%}
+      &_-6{margin-left:-13.8%}
+      &_-7{margin-left:-16.1%}
+      &_-8{margin-left:-18.4%}
+      &_-9{margin-left:-20.7%}
+      &_-10{margin-left:-23%}
+      &_-11{margin-left:-25.3%}
+      &_-12{margin-left:-27.6%}
+      &_-13{margin-left:-29.9%}
+      &_-14{margin-left:-32.2%}
+      &_-15{margin-left:-34.5%}
+      &_-16{margin-left:-36.8%}
+      &_-17{margin-left:-39.1%}
+      &_-18{margin-left:-41.4%}
+      &_-19{margin-left:-43.7%}
+      &_-20{margin-left:-46%}
+      &_-21{margin-left:-48.3%}
+
+      &_0{margin-left:0}
+      
+      &_1{margin-left:2.3%}
+      &_2{margin-left:4.6%}
+      &_3{margin-left:6.9%}
+      &_4{margin-left:9.2%}
+      &_5{margin-left:11.5%}
+      &_6{margin-left:13.8%}
+      &_7{margin-left:16.1%}
+      &_8{margin-left:18.4%}
+      &_9{margin-left:20.7%}
+      &_10{margin-left:23%}
+      &_11{margin-left:25.3%}
+      &_12{margin-left:27.6%}
+      &_13{margin-left:29.9%}
+      &_14{margin-left:32.2%}
+      &_15{margin-left:34.5%}
+      &_16{margin-left:36.8%}
+      &_17{margin-left:39.1%}
+      &_18{margin-left:41.4%}
+      &_19{margin-left:43.7%}
+      &_20{margin-left:46%}
+      &_21{margin-left:48.3%}
     }
-  
-    &.COVID19NoDetectado {
-      background-image: url('data:image/svg+xml;base64,XXX')
-      background-color: ;
-      border-color: ;
+    
+
+    &.patient{
+      &_COVID19Detectado {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMEw5Ljg4ODU0IDYuMTExNDZIMTZMMTEuMDU1NyA5Ljg4ODU0TDEyLjk0NDMgMTZMOCAxMi4yMjI5TDMuMDU1NzMgMTZMNC45NDQyNyA5Ljg4ODU0TDAgNi4xMTE0Nkg2LjExMTQ2TDggMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=')
+      }
+    
+      &_COVID19NoDetectado {
+        background-image: url('data:image/svg+xml;base64,XXX')
+        background-color: ;
+        border-color: ;
+      }
+      &_noCOVID19AltaMed {
+        border-radius:100%
+      }
+      &_COVID19AltaMed {
+        background-color: ;
+        border-color: ;
+      }
+      &_cohorteCOVID {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTggMEw5Ljg4ODU0IDYuMTExNDZIMTZMMTEuMDU1NyA5Ljg4ODU0TDEyLjk0NDMgMTZMOCAxMi4yMjI5TDMuMDU1NzMgMTZMNC45NDQyNyA5Ljg4ODU0TDAgNi4xMTE0Nkg2LjExMTQ2TDggMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=')
+        border-color: ;
+      }
+      &_sospechaCOVID19 {
+        background-color: ;
+        border-color: ;
+      }
+
+      &_altaMed {
+        border-radius:100%
+      }
+      &_altaAdministrativa {
+        background-color: ;
+        border-color: ;
+      }
+      &_quirurgico {
+        background-color: transparent !important;
+        border:solid 2px;
+      }
+      &_ugcc {
+        background-color: ;
+        border-color: ;
+      }
+      &_aseoTerminal {
+        background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGxpbmUgeDE9IjcuMzg0NjQiIHkxPSI0LjcwNzM4ZS0wOCIgeDI9IjcuMzg0NjQiIHkyPSIxNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHkxPSI4IiB4Mj0iMTUiIHkyPSI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+Cg==')
+      }
+      
+      &_normal {
+        background-color: ;
+        border-color: ;
+      }
     }
-    &.noCOVID19AltaMed {
-      background-color: ;
-      border-color: ;
-    }
-    &.COVID19AltaMed {
-      background-color: ;
-      border-color: ;
-    }
-    &.cohorteCOVID {
-      background-color: ;
-      border-color: ;
-    }
-    &.sospechaCOVID19 {
-      background-color: ;
-      border-color: ;
-    }
-    &.altaMed {
-      background-color: ;
-      border-color: ;
-    }
-    &.altaAdministrativa {
-      background-color: ;
-      border-color: ;
-    }
-    &.quirurgico {
-      background-color: ;
-      border-color: ;
-    }
-    &.ugcc {
-      background-color: ;
-      border-color: ;
-    }
-    &.aseoTerminal {
-      background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTUiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNSAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGxpbmUgeDE9IjcuMzg0NjQiIHkxPSI0LjcwNzM4ZS0wOCIgeDI9IjcuMzg0NjQiIHkyPSIxNiIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHkxPSI4IiB4Mj0iMTUiIHkyPSI4IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KPC9zdmc+Cg==')
-    }
-    &.normal {
-      background-color: ;
-      border-color: ;
-    }
-    &.enPreparaciónReservada {
-      background-color: ;
-      border-color: ;
-    }
-    &.bloqueadaReservada {
-      background-color: ;
-      border-color: ;
-    }
-    &.ocupada {
-      background-color: #5c6067;
-    }
-    &.ocupadaReservada {
-      background-color: ;
-      border-color: ;
-    }
-    &.bloqueada {
-      border-color: #fff;
-      background-color: #fff;
-    }
-    &.enPreparacion {
-      background-color: #4DB2B2 ;
-      border-color: #4DB2B2;
-      border-radius: 100%;
-    }
-    &.libreAsignada {
-      background-color: ;
-      border-color: ;
-    }
-    &.libreReservada {
-      background-color: #1F77B4;
-      border-color: ;
-    }
-    &.libre {
-      background-color: #1F77B4 ;
-      border-color: #1F77B4 ;
-      border-radius: 100%
-    }
-    &.traslado {
-      background-color: ;
-      border-color: ;
+
+    &.room{
+      &_COVID19Detectado {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      &_COVID19NoDetectado {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      &_noCOVID19AltaMed {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      &_COVID19AltaMed {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      &_cohorteCOVID {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      &_sospechaCOVID19 {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      &_sospechaCOVID19AltaMed{
+        background-color: white;
+        border-color: white;
+        color: black !important;
+      }
+      
+      &_ocupada,
+      &_ocupadaReservada {
+        background-color: #5C6067;
+        border-color: #5C6067;
+      }
+      
+      &_bloqueada {
+        border-color: #fff;
+        background-color: #fff;
+        color: black !important;
+      }
+      &_bloqueadaReservada {
+        background-color: #EDC948;
+        border-color: #EDC948;
+      }
+
+      &_enPreparacion {
+        background-color: #019292;
+        border-color: #019292;
+      }
+      &_enPreparaciónReservada {
+        background-color: #E39803;
+        border-color: #E39803;
+      }
+
+      &_libre {
+        background-color: #1F77B4;
+        border-color: #1F77B4;
+      }
+      &_libreAsignada {
+        background-color: #B9DDF1;
+        border-color: #B9DDF1;
+      }
+      &_libreReservada {
+        background-color: #1F77B4;
+        border-color: #1F77B4;
+      }
+      
+      &_traslado {
+        background-color: ;
+        border-color: ;
+      }
     }
   }
 

@@ -27,7 +27,7 @@ const Filters = () => {
             <div className="formContainerControl">
               <label>Edificio</label>
               <Controller
-                name="Edificio"
+                name="edificio"
                 className="materialUISelect"
                 render={({ field }) => (
                   <Select
