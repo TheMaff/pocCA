@@ -6,6 +6,10 @@ export const Container = styled.div`
   background: #1e1e1e;
   border-radius: 12px;
 `
+export const Building = styled.div`
+  border:solid 2px #ff0000;
+  padding: .5rem;
+`
 export const Level = styled.div`
   height: 100%;
   border-top: 1px solid #fff;
@@ -22,7 +26,6 @@ export const Level = styled.div`
     position: absolute;
     transform-origin: center;
     transform:rotate(-90deg) translate(50%,0);
-    display:none;
     left:0;
     top:50%;
     :first-child{
@@ -31,7 +34,8 @@ export const Level = styled.div`
     h3 {
       display:none;
       color:white;
-      font-size: 14px;
+      font-size: 11px;
+      font-weight: 100;
       :first-child {
         display:inline-block
       }

@@ -5,7 +5,7 @@ const Sidebar = () => {
     return (
         <>
         <Container>
-            <h3>Sidebar</h3>
+            
         </Container>
         </>
     )

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Container} from './styles'
 import Filters from '../Filters'
 
 const Header = () => {
+
+    const [edificio, setEdificio] = useState({})
+
     return (
         <>
         <Container>
@@ -11,7 +14,7 @@ const Header = () => {
                 <h2>GERENCIA DE GESTION Y ESTUDIOS</h2>
             </div>
 
-            <Filters/>
+            <Filters setEdificio={setEdificio} />
 
             <div className='lastULpdate'>
                 <p>Ultima actualización: 16/07/2022  20:47:13</p>

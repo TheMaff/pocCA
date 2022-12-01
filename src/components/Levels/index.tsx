@@ -4,6 +4,7 @@ import EmbedQuery from '../Embed/components/EmbedQuery/EmbedQuery'
 import { Container, Level, Section } from './styles'
 
 const Levels = () => {
+
   const [dataTest] = EmbedQuery()
 
   const func = (array: any) => {
@@ -45,6 +46,9 @@ const Levels = () => {
     data.push(func(dataTest)[pisos])
   }
 
+  console.log(data);
+  
+
   return (
     <Container>
       <Level>
@@ -58,9 +62,8 @@ const Levels = () => {
               {
                 piso.map((title: any, index: any) => (
                   <h3 key={index}>
-                  {
-                    title['estado_camas_live.piso']
-                  }
+                    <span>{title['estado_camas_live.edificio2']} </span>
+                    <span> {title['estado_camas_live.piso']}</span>
                   </h3>
                 ))
               }

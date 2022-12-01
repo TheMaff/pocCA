@@ -5,7 +5,6 @@ const Status = () => {
     return (
         <>
         <Container>
-            <h3>Estados</h3>
             <div>
                 <ul>
                     <li><span className="COVID19Detectado"></span> COVID19 Detectado</li>

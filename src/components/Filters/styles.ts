@@ -33,7 +33,7 @@ export const Container = styled.div`
   }
 
   
-  input {
+  select,input {
     display: block;
     box-sizing: border-box;
     width: 100%;
