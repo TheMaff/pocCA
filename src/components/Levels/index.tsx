@@ -6,54 +6,116 @@ import { Container, Level, Section } from './styles'
 const Levels = () => {
 
   const [dataTest] = EmbedQuery()
+  
+  const func1 = (array: any) => {
 
-  const func = (array: any) => {
-    const newData = array.reduce((ac: any, cv: any) => {
+    const newData = array.reduce((ac: any, cv: any, i:any) => {
 
-      // Crear sección de pisos la primera vez
-      if (!ac[cv['estado_camas_live.piso']]) {
-        ac[cv['estado_camas_live.piso']] = []
+      // Crear sección de edificios la primera vez
+      if (!ac[cv['estado_camas_live.edificio2']]) {
+        ac[cv['estado_camas_live.edificio2']] = []
+      }
+      
+      //Crear sección pisos la primera vez
+      if (!ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']]) {
+        ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']] = []
       }
 
-      // Crear sección ejey la primera vez
-      if (!ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']]) {
-        ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']] = []
+      //Crear sección ejey la primera vez
+      if (!ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']]) {
+        ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']] = []
       }
-      // Si ya se ha creado el piso
-      if (ac[cv['estado_camas_live.piso']]) {
+
+      //Si ya se ha creado el edificio2
+      if (ac[cv['estado_camas_live.edificio2']]) {
         
-        // Si en el piso ya se creó la sección de ejey
-        if (ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']]) {
-          // Si ya existe un objeto en la sección ejex pusheo los nuevos
-          if (ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][cv['estado_camas_live.ejex']]) {
-            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']].push(cv)
+        //Si en el edificio2 ya se creó la sección de piso
+        if (ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']]) {
 
-          } else {
-            // si no existe ningún objeto, se agrega el primero
-            ac[cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][cv['estado_camas_live.ejex']] = cv
+          //Si ya existe un objeto en la sección ejey pusheo los nuevos
+          if (ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']]) {
+
+            //Si ya existe un objeto en la sección ejex pusheo los nuevos
+            if (ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']][cv['estado_camas_live.ejex']]) {
+
+              ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']].push(cv)   
+
+            } else {
+              // si no existe ningún objeto, se agrega el primero
+              ac[cv['estado_camas_live.edificio2']][cv['estado_camas_live.piso']][cv['estado_camas_live.ejey']] = cv
+            }
           }
+
         }
       }
 
       return ac
+
     }, [])
+
     return newData
   }
 
   let data: any = []
+  let edData: any = []
 
-  for (const pisos in func(dataTest)) {
-    data.push(func(dataTest)[pisos])
+  for (const edificio in func1(dataTest)) {
+    
+    data.push(func1(dataTest)[edificio])
+    
+    console.log('Data in for:____');
+    console.log(edificio);
+
+    for (const piso in [edificio]){
+
+      console.log('Piso:_____');
+      console.log(piso);
+      
+      //data.push(data[edificio][piso])
+    }
+
   }
-
-  console.log(data);
   
+  console.log('Data:_______');
+  console.log(data);
+
+  console.log('EdData:____');
+  console.log(edData);
+
+  console.log('func1(dataTest)');
+  console.log(func1(dataTest));
 
   return (
     <Container>
       <Level>
 
-        {data.map((value: any, index: any) => (
+      {edData.map((value: any, index: any) => (
+
+        console.log('value'),
+        console.log(value),
+        
+        <Level key={index}>
+
+          {value.map((section: any, index: any) => (
+
+          <Section key={index}>
+
+            {section.map((room: any, index: any) => (
+              
+              {room}
+
+            ))}
+
+          </Section>
+
+          ))}
+
+        </Level>
+      
+      ))}
+
+        {/*
+        {edData.map((value: any, index: any) => (
 
           <Level key={index}>
 
@@ -201,6 +263,9 @@ const Levels = () => {
             ))}
           </Level>
         ))}
+                    
+        */}
+
       </Level>
     </Container>
   )
